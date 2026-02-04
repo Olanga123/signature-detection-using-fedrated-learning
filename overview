@@ -1,0 +1,85 @@
+📌 Project Overview
+
+This project is part of a larger research-oriented system aimed at Signature Detection using Federated Learning.
+The current implementation serves as a baseline machine learning prototype to study classification behavior, decision boundaries, and phase-transition–like phenomena using logistic regression on synthetic data.
+
+The long-term goal is to:
+
+Replace synthetic data with real signature images
+
+Move from centralized training to Federated Learning (FL)
+
+Ensure data privacy across distributed clients (banks, institutions, devices)
+
+🧠 Motivation
+
+Signature verification systems face two major challenges:
+
+Privacy – signature data is highly sensitive
+
+Generalization – signatures vary across users, time, and conditions
+
+Federated Learning allows training a global model without sharing raw data, making it ideal for signature detection systems deployed across multiple organizations.
+
+This repository currently focuses on:
+
+Understanding binary classification behavior
+
+Analyzing learning dynamics
+
+Preparing the ML pipeline for federated extension
+
+🛠️ Current Implementation Summary
+🔹 Data Generation
+
+Synthetic 2D Ising-model–like lattice data is generated
+
+Each sample represents a binary state matrix
+
+Labels are assigned based on a critical threshold (analogous to phase transition)
+
+This mimics how handwritten signatures can transition between genuine and forged patterns.
+
+🔹 Model Architecture
+
+Logistic Regression implemented using PyTorch
+
+Single linear layer + sigmoid activation
+
+Binary classification using Binary Cross Entropy Loss
+
+🔹 Training Strategy
+
+Mini-batch gradient descent
+
+Adam optimizer
+
+Train-test split (80/20)
+
+Performance tracked via:
+
+Loss per epoch
+
+Classification accuracy
+
+🔹 Visualization & Analysis
+
+The code produces:
+
+Accuracy vs Epoch Plot – learning behavior
+
+Phase Classification vs Temperature Plot – decision boundary analysis
+
+Ordered vs Disordered State Visualization – pattern separation
+
+These visualizations help interpret model confidence and transitions, which is crucial for biometric verification tasks.
+
+📊 Results
+
+The model successfully learns a non-random decision boundary
+
+Accuracy improves steadily across epochs
+
+Clear separation between two phases (classes)
+
+This validates the classification pipeline before scaling to federated learning.
